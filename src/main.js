@@ -1,4 +1,6 @@
 import { createApp } from 'vue'
+import { createPinia } from 'pinia'
+
 import App from './App.vue'
 import './index.css';
 
@@ -17,8 +19,14 @@ import { faMobileScreenButton } from '@fortawesome/free-solid-svg-icons'
 
 //import './assets/main.css'
 library.add(faGithub, faInstagram, faLinkedin, faPenNib, faCode, faMobileScreenButton)
+const pinia = createPinia()
+
+
 
 createApp(App)
 .component('font-awesome-icon', FontAwesomeIcon)
+.use(pinia)
 .mount('#app')
+
+
 
